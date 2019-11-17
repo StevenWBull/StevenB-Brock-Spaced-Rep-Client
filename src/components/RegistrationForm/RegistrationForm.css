@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #F5E050;
+  color:#231F20;
+}
+
+.LoginForm,
+.RegistrationForm {
+  background: #0A75BC;
+  width: 97%;
+  border-radius: 6px;
+  margin: 20px auto;
+  padding: 30px;
+  border:4px solid #231F20;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="user_name"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 5px 22px 0;
+  display: inline-block;
+  border: 1px solid #231F20;
+  background: #f1f1f1;
+  font-size: 1em;
+}
+
+.LoginButton,
+.RegisterButton {
+  background: #F5E050;
+  border: 1px solid #231F20;
+  cursor: pointer;
+  color: #231F20;
+  padding: 10px 15px 5px 15px;
+  border-radius: 15px;
+  font-size: 1em;
+  font-family: 'Luckiest Guy';
+}
+
+.AccountAlready {
+  border: 1px solid #F5E050;
+  background-color: transparent;
+  cursor: pointer;
+  color: #F5E050;
+  font-size: 1em;
+  margin-left: 15px;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3em;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+@media screen and (min-width: 765px) {
+  .LoginForm,
+  .RegistrationForm {
+    width: 40%;
+  }
+}

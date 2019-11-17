@@ -17,39 +17,47 @@ class Header extends Component {
         <span>
           {this.context.user.name}
         </span>
-        <nav>
-          <Link
-            onClick={this.handleLogoutClick}
-            to='/login'>
-            Logout
+        <div className="HeaderLoggedInContainer">
+          <Link to="/">
+            <p>
+              Home
+            </p>
           </Link>
-        </nav>
+          <Link to="/login">
+            <button className="HeaderLogoutButton" onClick={this.handleLogoutClick}>Logout
+            </button>
+          </Link>
+        </div>
       </div>
     )
   }
 
   renderLoginLink() {
     return (
-      <nav>
-        <Link to='/login'>Login</Link>
-        {' '}
-        <Link to='/register'>Sign up</Link>
-      </nav>
+        <nav className="HeaderNotLoggedIn">
+          <Link to='/login'>Login</Link>
+          <Link to='/register'>Sign up</Link>
+        </nav>
     )
   }
 
   render() {
     return (
-      <header>
-        <h1>
-          <Link to='/'>
-            Spaced repetition
-          </Link>
-        </h1>
-        {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()}
+      <div className="Header">
+        <header className="HeaderContainer">
+          <nav className="NavHeader">
+              <h1>
+              <Link to='/'>
+                Minionese
+              </Link>
+              </h1>
+              <span className="HeaderTaglineWide">Learn Banana Langauge.</span>
+          </nav>
+          {TokenService.hasAuthToken()
+            ? this.renderLogoutLink()
+            : this.renderLoginLink()}
       </header>
+      </div>
     );
   }
 }

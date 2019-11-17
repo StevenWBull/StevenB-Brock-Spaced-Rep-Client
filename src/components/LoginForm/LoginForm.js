@@ -3,6 +3,8 @@ import { Input, Label } from '../Form/Form'
 import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/UserContext'
 import Button from '../Button/Button'
+import '../RegistrationForm/RegistrationForm.css'
+
 
 class LoginForm extends Component {
   static defaultProps = {
@@ -72,7 +74,7 @@ class LoginForm extends Component {
             required
           />
         </div>
-        <Button type='submit'>
+        <Button className="LoginButton" type='submit'>
           Login
         </Button>
       </form>
