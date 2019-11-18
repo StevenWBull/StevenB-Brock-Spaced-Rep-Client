@@ -32,11 +32,7 @@
   ],
   "devDependencies": {
     "cypress": "^3.6.1",
-<<<<<<< HEAD
-    "jsonwebtoken": "^8.5.0",
-=======
     "jsonwebtoken": "^8.5.1",
->>>>>>> aff4ef93ee5f4ddf9a76def0db5c6f5e3f501e21
     "unfetch": "^4.1.0"
   }
 }
