@@ -10,10 +10,10 @@ class LearningRoute extends Component {
     isFlipped: false
   };
 
-  componentDidMount(){
+  /* componentWillMount = () => {
     const GetStuff = AuthApiService.getLanguage();
     this.setState({ words: GetStuff.words });
-  }
+  } */
 
   handleClick = async e => {
     e.preventDefault();
