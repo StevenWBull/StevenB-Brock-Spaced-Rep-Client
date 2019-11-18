@@ -43,6 +43,21 @@ const AuthApiService = {
           : res.json()
       )
   },
+  getLanguage() {
+    return fetch(`${config.API_ENDPOINT}/language`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then(res =>
+        { return (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+        }
+      )
+  },
 }
 
 export default AuthApiService

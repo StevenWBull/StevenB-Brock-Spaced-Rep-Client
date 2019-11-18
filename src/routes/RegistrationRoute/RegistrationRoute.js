@@ -18,10 +18,10 @@ class RegistrationRoute extends Component {
   render() {
     return (
       <section>
-        <p>
+        {/* <p>
           Practice learning a language with the spaced reptition revision technique.
-        </p>
-        <h2>Sign up - (Gag aka)</h2>
+        </p> */}
+        <h2>Sign up</h2>
         {/* <img src={Image} alt="logo"/> */}
         <RegistrationForm
           onRegistrationSuccess={this.handleRegistrationSuccess}

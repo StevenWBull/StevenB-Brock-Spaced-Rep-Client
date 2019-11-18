@@ -1,0 +1,43 @@
+.LearnContainer {
+  background-color: #0A75BC;
+  width: 90%;
+  border: 2px solid black;
+  padding: 5%;
+  text-align: center;
+  margin: 5%;
+}
+
+.buttonContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#CheckAnswer {
+  width: 100%;
+}
+
+@media screen and (min-width: 765px) {
+  #CheckAnswer {
+    width: 40%;
+  }
+
+  .LearnContainer {
+    background-color: #0A75BC;
+    width: 40%;
+    border: 2px solid black;
+    padding: 5%;
+    text-align: center;
+    margin: 50px 30%;
+  }
+}
+
+.flip-card {
+  height: 200px;
+  width: 300px;
+  background-color: white;
+  border: 2px solid #231F20;
+  margin: 0 auto;
+}
+
