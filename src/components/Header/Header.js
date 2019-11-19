@@ -47,7 +47,7 @@ class Header extends Component {
         <header className="HeaderContainer">
           <nav className="NavHeader">
             <h1 className="HeaderTitle">
-              <Link to="/">Minionese</Link>
+              Minionese
             </h1>
             <span className="HeaderTaglineWide">Learn Banana Langauge.</span>
           </nav>

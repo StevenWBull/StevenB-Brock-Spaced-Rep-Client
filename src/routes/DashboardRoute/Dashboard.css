@@ -6,12 +6,61 @@
   border: 2px solid black;
   padding: 25px;
   text-align: center;
-  margin: 25px 5%;
-  margin-bottom: 100px;
+  margin: 15px 5%;
+  margin-bottom: 80px;
+  color: white;
+}
+
+.DashContainer h1 {
+  margin-top: 0px;
+  text-shadow: rgb(192, 143, 24) 1px 1px 0px, rgb(192, 143, 24) 2px 2px 0px, rgb(68, 68, 68) 3px 3px 0px, rgb(68, 68, 68) 4px 4px 0px, rgb(68, 68, 68) 5px 5px 0px, rgb(68, 68, 68) 6px 6px 0px, rgb(153, 153, 153) 5px 5px 15px;
+}
+
+.CounterContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .DashboardInfo {
   text-align: left;
+  background-color: rgb(35, 31, 32, .5);
+  padding: 10px;
+  border-radius: 3px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.UserStats {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 2px solid white;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.CountContainer {
+  margin-top: 10px;
+}
+
+.CountContainer p {
+  margin: 0 auto;
+  text-align: left;
+}
+
+.LearnButton {
+  background: #F5E050;
+  border: 1px solid #231F20;
+  cursor: pointer;
+  color: #231F20;
+  padding: 10px 15px 5px 15px;
+  border-radius: 15px;
+  margin-bottom: -1px;
+  margin-top: 15px;
+  font-size: 1em;
+  font-family: 'Luckiest Guy';
+  text-decoration: none;
 }
 
 .MinionImg {
@@ -23,6 +72,7 @@
 .MinionContainer {
   display: flex;
   flex-direction: column;
+  margin-top: 25px;
 }
 
 @media screen and (min-width: 765px) {
@@ -33,11 +83,28 @@
     border: 2px solid black;
     padding: 25px;
     text-align: center;
-    margin: 25px 20%;
+    margin: 25px 20% 85px 20%;
   }
   .MinionImg {
     height: auto;
     width: 300px;
     justify-content: flex-end;
   }
+  .DashboardInfo {
+    text-align: left;
+    background-color: rgb(35, 31, 32, .5);
+    padding: 10px;
+    width: 60%;
+    margin-bottom: 25px;
+  }
+  .UserStats {
+    text-align: center;
+    width: 40%;
+    margin-top: 0px;
+  }
+  .CounterContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
 }

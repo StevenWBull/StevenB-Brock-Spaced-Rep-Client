@@ -50,7 +50,7 @@ class LearningRoute extends Component {
           </div>
         </ReactCardFlip>
         <div className="buttonContainer">
-          <button className="LearnButton" onClick={this.handleFlip.bind(this)}>Click to flip</button>
+          <button className="FlipButton" onClick={this.handleFlip.bind(this)}>Click to flip</button>
           <div className="InputContainer">
             <input
               className="LearnInput"
@@ -62,7 +62,10 @@ class LearningRoute extends Component {
             <button className="CheckAnswer"> Was I Right?!</button>
           </div>
         </div>
-        <button className="NextButton" onClick={this.handleClick.bind(this)}>Next Word</button>
+        <button className="NextButton" onClick={this.handleClick.bind(this)}>-> Next Word -></button>
+        <span className="Instruct">
+          Click the home button to see instructions
+        </span>
       </section>
     );
   }
