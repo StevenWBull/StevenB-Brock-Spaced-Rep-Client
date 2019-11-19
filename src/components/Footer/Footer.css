@@ -1,11 +1,30 @@
 footer {
-  position: absolute; 
-  right: 0;
-  bottom: 0; 
-  height:auto;
-  background-image: url('../../images/mini.png');
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:65px;
+  width:100%;
+  background-color:#231F20;
+  color: white;
+  text-align: center;
+  border-top: 2px solid #A87A51;
 }
 
-.EyesImg {
+.CreatedBy {
+  width: auto;
+  color: white;
+  margin: 10px auto;
+  font-size: .5em;
+  text-shadow: rgb(192, 143, 24) 1px 1px 0px, rgb(192, 143, 24) 2px 2px 0px, rgb(68, 68, 68) 3px 3px 0px, rgb(68, 68, 68) 4px 4px 0px, rgb(68, 68, 68) 5px 5px 0px, rgb(68, 68, 68) 6px 6px 0px, rgb(153, 153, 153) 5px 5px 5px;
+}
 
+.Brockb {
+  text-shadow: rgb(192, 143, 24) 1px 1px 0px, rgb(192, 143, 24) 2px 2px 0px, rgb(68, 68, 68) 3px 3px 0px, rgb(68, 68, 68) 4px 4px 0px, rgb(68, 68, 68) 5px 5px 0px, rgb(68, 68, 68) 6px 6px 0px, rgb(153, 153, 153) 5px 5px 5px;
+  color: #FCE029;
+}
+
+@media screen and (min-width: 765px) {
+  .CreatedBy {
+    font-size: 1em;
+  }
 }

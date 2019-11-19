@@ -31,6 +31,9 @@ class LearningRoute extends Component {
     console.log(this.state.words);
     return (
       <section className="LearnContainer">
+        <h1 className="TranslateTitle">
+          Translate This Word!
+        </h1>
         <ReactCardFlip
           isFlipped={this.state.isFlipped}
           flipDirection="horizontal"
@@ -39,22 +42,27 @@ class LearningRoute extends Component {
         >
           <div className="flip-card">
             {this.state.words.find(e => e.id == this.state.index)}
-            This is the front of the card.
+            <p>English Word To Translate</p>
           </div>
 
-          <div className="flip-card">This is the back of the card.</div>
+          <div className="flip-card">
+            <p>Minionese Translation</p>
+          </div>
         </ReactCardFlip>
         <div className="buttonContainer">
           <button className="LearnButton" onClick={this.handleFlip.bind(this)}>Click to flip</button>
-          <input
-            className="LearnInput"
-            type="text"
-            id="CheckAnswer"
-            title="AnswerCheck"
-            placeholder="Your Answer"
-          />
-          <button className="LearnButton" onClick={this.handleClick.bind(this)}>Next Word</button>
+          <div className="InputContainer">
+            <input
+              className="LearnInput"
+              type="text"
+              id="CheckAnswer"
+              title="AnswerCheck"
+              placeholder="Your Answer"
+            />
+            <button className="CheckAnswer"> Was I Right?!</button>
+          </div>
         </div>
+        <button className="NextButton" onClick={this.handleClick.bind(this)}>Next Word</button>
       </section>
     );
   }

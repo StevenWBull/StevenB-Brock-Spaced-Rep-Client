@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import UserContext from "../../contexts/UserContext";
-import Image from "../../images/mini.png";
 import "./Footer.css";
 
 class Header extends Component {
@@ -9,7 +8,8 @@ class Header extends Component {
   render() {
     return (
       <footer className="FooterContainer">
-        {/* <img className="EyesImg" src={Image} alt="Eyes" /> */}
+        <p className="CreatedBy">|| Learning App Created by ||</p>
+        <span className="Pair">Brock Boutwell & Steven Bull</span> 
       </footer>
     );
   }

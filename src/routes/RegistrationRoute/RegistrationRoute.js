@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
-import Image from '../../images/minionseyes.png';
 
 
 class RegistrationRoute extends Component {

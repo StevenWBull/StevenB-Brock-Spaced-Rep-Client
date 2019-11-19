@@ -2,13 +2,33 @@
   height: auto;
   padding: 10px;
   border-bottom: 2px solid #A87A51;
-  background-color: #FCE029;
+  background-color: #949699;
 }
 
-.Header h1 {
+.HeaderTitle {
   margin: 0 auto;
   font-size: 22px;
-  margin-top: 12px;
+  text-shadow: rgb(192, 143, 24) 1px 1px 0px, rgb(192, 143, 24) 2px 2px 0px, rgb(68, 68, 68) 3px 3px 0px, rgb(68, 68, 68) 4px 4px 0px, rgb(68, 68, 68) 5px 5px 0px, rgb(68, 68, 68) 6px 6px 0px, rgb(153, 153, 153) 5px 5px 15px;
+  color: #FCE029 !important;
+}
+.HeaderTitle a {
+  text-decoration: none;
+}
+
+.HeaderTitle a:visited {
+  color: #FCE029 !important;
+  text-decoration: none;
+}
+
+.HomeButton {
+  margin: 0 auto;
+  text-shadow: rgb(192, 143, 24) 1px 1px 0px, rgb(192, 143, 24) 2px 2px 0px, rgb(68, 68, 68) 3px 3px 0px, rgb(68, 68, 68) 4px 4px 0px, rgb(68, 68, 68) 5px 5px 0px, rgb(68, 68, 68) 6px 6px 0px, rgb(153, 153, 153) 5px 5px 15px;
+  color: #FCE029;
+  text-decoration: none;
+}
+
+.HeaderLoggedInContainer a {
+  text-decoration: none;
 }
 
 .HeaderContainer {
@@ -19,28 +39,13 @@
 .NavHeader {
   display: flex;
   flex-flow: row;
-}
-
-.Header a {
-  color:#231F20;
-  text-decoration: none;
-  padding-top: 5px;
+  margin-top: 10px;
 }
 
 .HeaderTaglineWide {
-  opacity: 0.35;
   margin-left: 10px;
-  margin-top: 22px;
   font-weight: 200;
   display: none;
-}
-
-.HeaderTaglineNarrow {
-  opacity: 0.35;
-  display: block;
-  text-align: center;
-  display: none;
-  margin-top: 10px;
 }
 
 .HeaderNotLoggedIn {
@@ -48,6 +53,16 @@
   flex: 1;
   align-items: center;
   justify-content: flex-end;
+}
+
+.LoginHeader {
+  text-shadow: rgb(192, 143, 24) 1px 1px 0px, rgb(192, 143, 24) 2px 2px 0px, rgb(68, 68, 68) 3px 3px 0px, rgb(68, 68, 68) 4px 4px 0px, rgb(68, 68, 68) 5px 5px 0px, rgb(68, 68, 68) 6px 6px 0px, rgb(153, 153, 153) 5px 5px 15px;
+  color: #FCE029;
+  text-decoration: none;
+}
+
+.LoginHeader a {
+  text-decoration: none;
 }
 
 .HeaderLoggedIn{
@@ -58,9 +73,11 @@
 }
 
 .UserName {
-  color: #231F20;
+  color: white;
   margin-right: 20px;
   display: none;
+  text-shadow: rgb(192, 143, 24) 1px 1px 0px, rgb(192, 143, 24) 2px 2px 0px, rgb(68, 68, 68) 3px 3px 0px, rgb(68, 68, 68) 4px 4px 0px, rgb(68, 68, 68) 5px 5px 0px, rgb(68, 68, 68) 6px 6px 0px, rgb(153, 153, 153) 5px 5px 15px;
+  text-decoration: none;
 }
 
 .HeaderLoggedInContainer {
@@ -81,17 +98,20 @@
   border: 2px solid #231F20;
   border-radius: 15px;
   margin-left: 10px;
+  text-decoration: none;
 }
 
 .HeaderLogoutButton {
-  border: 1px solid #231F20;
+  border: 2px solid #231F20;
   background-color: #0A75BC;
   cursor: pointer;
   color: white;
   font-size: 1em;
-  margin-left: 15px;
-  padding: 5px 15px;
+  margin-left: 10px;
+  padding: 10px 15px 5px 15px;
   border-radius: 15px;
+  text-decoration: none;
+  font-family: 'Luckiest Guy';
 }
 
 @media screen and (min-width: 765px) {
@@ -99,16 +119,19 @@
     align-items: baseline;
   }
   .HeaderTaglineWide {
-    opacity: 0.35;
     margin-left: 10px;
-    margin-top: 22px;
+    padding-top: 2px;
     font-weight: 200;
     display: flex;
+    text-shadow: rgb(192, 143, 24) 1px 1px 0px, rgb(192, 143, 24) 2px 2px 0px, rgb(68, 68, 68) 3px 3px 0px, rgb(68, 68, 68) 4px 4px 0px, rgb(68, 68, 68) 5px 5px 0px, rgb(68, 68, 68) 6px 6px 0px, rgb(153, 153, 153) 5px 5px 15px;
+    color: #FCE029 !important;
   }
   .UserName {
-    color: #231F20;
+    color: white;
     margin-right: 20px;
     display: flex;
+  }
+  .Header a {
   }
 }
 

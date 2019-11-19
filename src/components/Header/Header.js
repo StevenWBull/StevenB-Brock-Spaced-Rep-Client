@@ -17,7 +17,7 @@ class Header extends Component {
         <div className="HeaderLoggedInContainer">
         <span className="UserName">{this.context.user.name}</span>
           <Link to="/">
-            <p>Home</p>
+            <p className="HomeButton">Home</p>
           </Link>
           <Link to="/login">
             <button
@@ -35,7 +35,7 @@ class Header extends Component {
   renderLoginLink() {
     return (
       <nav className="HeaderNotLoggedIn">
-        <Link to="/login">Login</Link>
+        <Link className="LoginHeader" to="/login">Login</Link>
         <Link to="/register">Sign up</Link>
       </nav>
     );
@@ -46,7 +46,7 @@ class Header extends Component {
       <div className="Header">
         <header className="HeaderContainer">
           <nav className="NavHeader">
-            <h1>
+            <h1 className="HeaderTitle">
               <Link to="/">Minionese</Link>
             </h1>
             <span className="HeaderTaglineWide">Learn Banana Langauge.</span>

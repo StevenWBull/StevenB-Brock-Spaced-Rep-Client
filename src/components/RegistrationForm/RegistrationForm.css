@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #949699;
+  background-color: #FCE029;
   color:#231F20;
 }
 
@@ -22,11 +22,14 @@ input[type="user_name"],
 input[type="password"] {
   width: 100%;
   padding: 15px;
+  padding-top: 18px;
   margin: 5px 5px 22px 0;
   display: inline-block;
   border: 1px solid #231F20;
   background: #f1f1f1;
   font-size: 1em;
+  font-family: 'Chilanka';
+  font-weight: 100;
 }
 
 .LoginButton,
