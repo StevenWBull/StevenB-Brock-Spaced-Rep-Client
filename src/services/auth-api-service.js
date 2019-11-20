@@ -58,6 +58,21 @@ const AuthApiService = {
         }
       )
   },
+  postGuess(userGuess) {
+    return fetch(`${config.API_ENDPOINT}/language/guess`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+      body: { 'guess': `${userGuess}`}
+    })
+    .then(res => {
+      return (!res.ok)
+      ? res.json().then(e => Promise.reject(e))
+      : res.json();
+    })
+  }
 }
 
 export default AuthApiService
