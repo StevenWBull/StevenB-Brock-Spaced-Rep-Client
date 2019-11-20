@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import UserContext from '../../contexts/UserContext'
+import WordsContext from '../../contexts/WordsContext'
 
 export default function PrivateRoute({ component, ...props }) {
   const Component = component
@@ -9,6 +10,7 @@ export default function PrivateRoute({ component, ...props }) {
       {...props}
       render={componentProps => (
         <UserContext.Consumer>
+          <WordsContext.Consumer>
           {userContext =>
             !!userContext.user.id
               ? <Component {...componentProps} />
@@ -21,6 +23,7 @@ export default function PrivateRoute({ component, ...props }) {
                 />
               )
           }
+          </WordsContext.Consumer>
         </UserContext.Consumer>
       )}
     />
