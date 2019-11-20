@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
 import Image from "../../images/14.png";
+import AuthApiService from '../../services/auth-api-service';
+import UserContext from '../../contexts/UserContext';
 import {
   Accordion,
   AccordionItem,
@@ -12,9 +14,24 @@ import {
 import "react-accessible-accordion/dist/fancy-example.css";
 
 class DashboardRoute extends Component {
-  state = {};
+  state = {
+    words: []
+  };
+
+  static contextType = UserContext;
+
+  componentDidMount = () => {
+    AuthApiService.getLanguage()
+      .then( data => {
+        this.setState({ words: data })
+      })
+      .catch(res => this.context.setError(res));
+  }
 
   render() {
+    console.log(this.state)
+    const { words } = this.state.words;
+    console.log(words)
     return (
       <section className="DashContainer">
         <h1>Welcome!</h1>
@@ -56,28 +73,10 @@ class DashboardRoute extends Component {
           <div className="UserStats">
             <h3>Times Correct Stats</h3>
             <div className="CountContainer">
-              <p>Hello:</p>
-              <br />
-              <p>Goodbye:</p>
-              <br />
-              <p>Thank You:</p>
-              <br />
-              <p>Fire:</p>
-              <br />
-              <p>I am Hungry:</p>
-              <br />
-              <p>Kiss Kiss:</p>
-              <br />
-              <p>We Love You:</p>
-              <br />
-              <p>Ice Cream:</p>
-              <br />
-              <p>One:</p>
-              <br />
-              <p>Two:</p>
-              <br />
-              <p>Three:</p>
-              <br />
+              {words 
+                ? words.sort((a, b) => a.id - b.id).map( word => <p key={word.id}>{word.original} | {word.correct_count} | {word.incorrect_count}</p>) 
+                : null
+              }
             </div>
           </div>
         </Accordion>
