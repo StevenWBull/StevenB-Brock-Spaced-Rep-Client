@@ -34,7 +34,7 @@ describe(`User story: Login`, function() {
     cy.get('main section').within($nav => {
       cy.get('a[href="/login"]')
         .should('be.visible')
-        .and('have.text', 'Already have an account?')
+        .and('have.text', 'Login')
         .click()
         .url()
         .should('eq', `${Cypress.config().baseUrl}/login`)
@@ -162,8 +162,8 @@ describe(`User story: Login`, function() {
 
     it(`stores token in localStorage and redirects to /`, () => {
       const loginUser = {
-        username: 'username',
-        password: 'password',
+        username: 'admin',
+        password: 'pass',
       }
       cy.visit('/login')
 
@@ -216,8 +216,8 @@ describe(`User story: Login`, function() {
 
     it(`keeps refreshing the token before it expires`, () => {
       const loginUser = {
-        username: 'username',
-        password: 'password',
+        username: 'admin',
+        password: 'pass',
       }
       cy.clock().visit('/login')
 
