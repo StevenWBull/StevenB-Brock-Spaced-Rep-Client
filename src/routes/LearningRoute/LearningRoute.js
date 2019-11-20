@@ -1,19 +1,14 @@
 import React, { Component } from "react";
 import "./LearningRoute.css";
 import ReactCardFlip from "react-card-flip";
-import AuthApiService from "../../services/auth-api-service";
+import WordsContext from '../../contexts/WordsContext';
 
 class LearningRoute extends Component {
   state = {
-    words: [],
-    index: 1,
     isFlipped: false
   };
 
-  /* componentWillMount = () => {
-    const GetStuff = AuthApiService.getLanguage();
-    this.setState({ words: GetStuff.words });
-  } */
+  static contextType = WordsContext;
 
   handleClick = async e => {
     e.preventDefault();
@@ -28,7 +23,8 @@ class LearningRoute extends Component {
   nextWord() {}
 
   render() {
-    console.log(this.state.words);
+    const word = this.context.words.words
+    const nextWord = this.context.words.language
     return (
       <section className="LearnContainer">
         <h1 className="TranslateTitle">
@@ -41,7 +37,7 @@ class LearningRoute extends Component {
           flipSpeedFrontToBack="1"
         >
           <div className="flip-card">
-            {this.state.words.find(e => e.id == this.state.index)}
+            {}
             <p>English Word To Translate</p>
           </div>
 

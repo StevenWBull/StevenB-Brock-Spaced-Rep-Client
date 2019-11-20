@@ -58,6 +58,21 @@ const AuthApiService = {
         }
       )
   },
+  getNextWord() {
+    return fetch(`${config.API_ENDPOINT}/language/head`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then(res =>
+        { return (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+        }
+      )
+  },
   postGuess(userGuess) {
     return fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',

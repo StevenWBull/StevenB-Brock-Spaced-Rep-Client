@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
 import Image from "../../images/14.png";
-import AuthApiService from '../../services/auth-api-service';
-import UserContext from '../../contexts/UserContext';
+import WordsContext from '../../contexts/WordsContext';
 import {
   Accordion,
   AccordionItem,
@@ -14,23 +13,11 @@ import {
 import "react-accessible-accordion/dist/fancy-example.css";
 
 class DashboardRoute extends Component {
-  state = {
-    words: []
-  };
-
-  static contextType = UserContext;
-
-  componentDidMount = () => {
-    AuthApiService.getLanguage()
-      .then( data => {
-        this.setState({ words: data })
-      })
-      .catch(res => this.context.setError(res));
-  }
+  static contextType = WordsContext;
 
   render() {
-    console.log(this.state)
-    const { words } = this.state.words;
+    console.log(this.context)
+    const { words } = this.context.words;
     console.log(words)
     return (
       <section className="DashContainer">
