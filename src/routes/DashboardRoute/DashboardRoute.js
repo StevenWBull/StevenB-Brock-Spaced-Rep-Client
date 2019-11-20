@@ -16,9 +16,13 @@ class DashboardRoute extends Component {
   static contextType = WordsContext;
 
   render() {
+<<<<<<< HEAD
     console.log(this.context)
     const { words } = this.context.words;
     console.log(words)
+=======
+    const { words } = this.state.words;
+>>>>>>> 2f21f7111cdd3a75ac1b1e73ec073b18b8dcbae3
     return (
       <section className="DashContainer">
         <h1>Welcome!</h1>

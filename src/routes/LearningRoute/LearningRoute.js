@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./LearningRoute.css";
 import ReactCardFlip from "react-card-flip";
+<<<<<<< HEAD
 import WordsContext from '../../contexts/WordsContext';
 
 class LearningRoute extends Component {
@@ -9,6 +10,26 @@ class LearningRoute extends Component {
   };
 
   static contextType = WordsContext;
+=======
+import AuthApiService from "../../services/auth-api-service";
+import UserContext from '../../contexts/UserContext';
+
+
+class LearningRoute extends Component {
+  state = {
+    words: []
+  };
+
+  static contextType = UserContext;
+
+  componentDidMount = () => {
+    AuthApiService.getLanguage()
+      .then( data => {
+        this.setState({ words: data })
+      })
+      .catch(res => this.context.setError(res));
+  }
+>>>>>>> 2f21f7111cdd3a75ac1b1e73ec073b18b8dcbae3
 
   handleClick = async e => {
     e.preventDefault();
@@ -23,8 +44,13 @@ class LearningRoute extends Component {
   nextWord() {}
 
   render() {
+<<<<<<< HEAD
     const word = this.context.words.words
     const nextWord = this.context.words.language
+=======
+    const { words } = this.state.words;
+    console.log(words)
+>>>>>>> 2f21f7111cdd3a75ac1b1e73ec073b18b8dcbae3
     return (
       <section className="LearnContainer">
         <h1 className="TranslateTitle">
@@ -37,7 +63,14 @@ class LearningRoute extends Component {
           flipSpeedFrontToBack="1"
         >
           <div className="flip-card">
+<<<<<<< HEAD
             {}
+=======
+            {words 
+                ? words.find({word} => word.id == word) 
+                : null
+            }
+>>>>>>> 2f21f7111cdd3a75ac1b1e73ec073b18b8dcbae3
             <p>English Word To Translate</p>
           </div>
 
