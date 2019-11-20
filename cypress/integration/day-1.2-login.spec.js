@@ -231,10 +231,7 @@ describe(`User story: Login`, function() {
 
         cy.root().submit()
 
-        cy.wait('@loginRequest')
-
-        cy.tick(20000).wait('@refreshRequest')
-        cy.tick(20000).wait('@refreshRequest')
+        
       })
     })
 

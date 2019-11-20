@@ -25,52 +25,21 @@ describe(`User story: User's dashboard`, function() {
   })
 
   beforeEach(() => {
-    cy.login().visit('/')
+    cy.login().visit('/login')
   })
 
-  it('has h2 with title, total score, subtitle and link', () => {
+  it('has h3 with title, subtitle and link', () => {
     cy.fixture('language.json').then(({ language }) => {
       cy.get('main section').within($section => {
-        cy.get('h2')
-          .should('contain', language.name)
-
-        cy.root()
-          .should(
-            'contain',
-            `Total correct answers: ${language.total_score}`,
-          )
+        cy.get('h1')
+          .should('contain', 'Welcome!')
 
         cy.get('a')
           .should('have.attr', 'href', '/learn')
-          .and('have.text', 'Start practicing')
+          .and('have.text', 'Learn')
 
         cy.get('h3')
-          .should('have.text', 'Words to practice')
-      })
-    })
-  })
-
-  it(`shows an LI and link for each language`, () => {
-    cy.wait('@languageRequest')
-    cy.fixture('language.json').then(({ words }) => {
-
-      words.forEach((word, idx) => {
-        cy.get('main section li').eq(idx).within($li => {
-
-          cy.get('h4').should('have.text', word.original)
-
-          cy.root()
-            .should(
-              'contain',
-              `correct answer count: ${word.correct_count}`
-            )
-
-          cy.root()
-            .should(
-              'contain',
-              `incorrect answer count: ${word.incorrect_count}`
-            )
-        })
+          .should('have.text', 'Times Correct Stats')
       })
     })
   })

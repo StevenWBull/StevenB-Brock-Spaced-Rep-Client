@@ -54,7 +54,7 @@ class DashboardRoute extends Component {
             </AccordionItemPanel>
           </AccordionItem>
           <div className="UserStats">
-            Times Correct Stats
+            <h3>Times Correct Stats</h3>
             <div className="CountContainer">
               <p>Hello:</p>
               <br />

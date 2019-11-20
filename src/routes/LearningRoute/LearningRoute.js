@@ -59,7 +59,7 @@ class LearningRoute extends Component {
               title="AnswerCheck"
               placeholder="Your Answer"
             />
-            <button className="CheckAnswer"> Was I Right?!</button>
+            <button type="submit" className="CheckAnswer"> Was I Right?!</button>
           </div>
         </div>
         <button className="NextButton" onClick={this.handleClick.bind(this)}>-> Next Word -></button>
