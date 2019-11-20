@@ -29,9 +29,7 @@ class DashboardRoute extends Component {
   }
 
   render() {
-    console.log(this.state)
     const { words } = this.state.words;
-    console.log(words)
     return (
       <section className="DashContainer">
         <h1>Welcome!</h1>

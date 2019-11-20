@@ -2,18 +2,23 @@ import React, { Component } from "react";
 import "./LearningRoute.css";
 import ReactCardFlip from "react-card-flip";
 import AuthApiService from "../../services/auth-api-service";
+import UserContext from '../../contexts/UserContext';
+
 
 class LearningRoute extends Component {
   state = {
-    words: [],
-    index: 1,
-    isFlipped: false
+    words: []
   };
 
-  /* componentWillMount = () => {
-    const GetStuff = AuthApiService.getLanguage();
-    this.setState({ words: GetStuff.words });
-  } */
+  static contextType = UserContext;
+
+  componentDidMount = () => {
+    AuthApiService.getLanguage()
+      .then( data => {
+        this.setState({ words: data })
+      })
+      .catch(res => this.context.setError(res));
+  }
 
   handleClick = async e => {
     e.preventDefault();
@@ -28,7 +33,8 @@ class LearningRoute extends Component {
   nextWord() {}
 
   render() {
-    console.log(this.state.words);
+    const { words } = this.state.words;
+    console.log(words)
     return (
       <section className="LearnContainer">
         <h1 className="TranslateTitle">
@@ -41,7 +47,10 @@ class LearningRoute extends Component {
           flipSpeedFrontToBack="1"
         >
           <div className="flip-card">
-            {this.state.words.find(e => e.id == this.state.index)}
+            {words 
+                ? words.find({word} => word.id == word) 
+                : null
+            }
             <p>English Word To Translate</p>
           </div>
 
