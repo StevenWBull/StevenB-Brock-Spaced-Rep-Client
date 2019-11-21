@@ -84,26 +84,16 @@ describe(`User story: Answer feedback`, function() {
       ]).then(() => {
         const [languageHeadFixture, incorrectFixture] = fixtures
 
-        cy.get('main').within($main => {
-          cy.get('.DisplayScore p')
+        cy.get('section').within($section => {
+          cy.get('h3')
             .should(
               'have.text',
-              `Your total score is: ${incorrectFixture.totalScore}`,
+              `Total Score: `,
             )
-          cy.get('h2')
+          cy.get('.NextButton')
             .should(
               'have.text',
-              `Good try, but not quite right :(`,
-            )
-          cy.get('.DisplayFeedback p')
-            .should(
-              'have.text',
-              `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`,
-            )
-          cy.get('button')
-            .should(
-              'have.text',
-              `Try another word!`,
+              `-> Next Word ->`,
             )
         })
       })
@@ -142,14 +132,14 @@ describe(`User story: Answer feedback`, function() {
           cy.get('h3')
             .should(
               'have.text',
-              `Total score: ${incorrectFixture.totalScore}`,
+              `Total Score: `,
             )
-          cy.get('p')
+          cy.get('.correctFeedback')
             .should(
               'have.text',
               `Awesome job! You got it right!`,
             )
-          cy.get('button')
+          cy.get('.NextButton')
             .should(
               'have.text',
               `-> Next Word ->`,
