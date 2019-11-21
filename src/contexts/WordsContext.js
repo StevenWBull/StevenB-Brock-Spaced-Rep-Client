@@ -33,14 +33,11 @@ export class WordsProvider extends Component {
   }
 
   setError = error => {
-    console.error(error)
     this.setState({ error })
   }
 
   setUpdate = () => {
     let newUpdate = !this.state.update;
-    console.log(newUpdate)
-    console.log('I ran!')
     this.setState({ 
       update: newUpdate
     }, this.componentDidMount)
