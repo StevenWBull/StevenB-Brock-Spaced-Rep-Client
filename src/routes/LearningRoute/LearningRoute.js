@@ -92,7 +92,7 @@ class LearningRoute extends Component {
               id="CheckAnswer"
               title="AnswerCheck"
               placeholder="Your Answer"
-            />
+            required/>
             <button type="submit" className="CheckAnswer"> Was I Right?!</button>
           </form>
         </div>
