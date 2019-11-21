@@ -23,6 +23,7 @@ class LearningRoute extends Component {
     try {
       const isCorrect = await AuthApiService.postGuess(guess.value);
       this.setState({ isCorrect: isCorrect })
+      document.getElementById('CheckAnswer').value='';
     } catch(error) {
       this.setState({ isError: error });
     }
@@ -32,7 +33,7 @@ class LearningRoute extends Component {
     return (
       <>
         <p>Awesome job! You got it right!</p>
-        <p>Your current score for this word is:</p>
+        <p>current word score:</p>
         <p>Correct: {word.correct_count + 1} Incorrect: {word.incorrect_count}</p>
       </>
     )
@@ -42,7 +43,7 @@ class LearningRoute extends Component {
     return (
       <>
         <p>Oooh sorry! Please flip the card to see the translation.</p>
-        <p>Your current score for this word is:</p>
+        <p>current word score:</p>
         <p>Correct: {word.correct_count} Incorrect: {word.incorrect_count + 1}</p>        
       </>
     )
@@ -66,7 +67,7 @@ class LearningRoute extends Component {
         <h1 className="TranslateTitle">
           Translate This Word!
         </h1>
-        <h3>
+        <h3 className="TotalScore">
           Total Score: { language ? language.total_score : null}
         </h3>
         <ReactCardFlip
@@ -76,12 +77,12 @@ class LearningRoute extends Component {
           flipSpeedFrontToBack="1"
         >
           <div className="flip-card">
-            <p>Minionese Translation</p>
+            <p>Minionese Word to Translate</p>
             {word ? <p>{word.find( word => word.id === nextWord.head ).original}</p> : null}
             {isCorrect && (isCorrect.isCorrect === true ? this.handleCorrectAnswer(word.find( word => word.id === nextWord.head)) : this.handleIncorrectAnswer(word.find( word => word.id === nextWord.head)))}
           </div>
           <div className="flip-card">
-            <p>English Word To Translate</p>
+            <p>English Translation</p>
             {word ? <p>{word.find( word => word.id === nextWord.head ).translation}</p> : null}
           </div>
         </ReactCardFlip>

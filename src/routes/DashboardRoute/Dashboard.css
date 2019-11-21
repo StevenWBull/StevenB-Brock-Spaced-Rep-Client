@@ -11,6 +11,22 @@
   color: white;
 }
 
+.TotalScoreDash {
+  color:white;
+  border: 2px dotted white;
+  width: auto;
+  margin: 25px auto 15px auto;
+  padding: 10px 5px 5px 5px;
+  border-radius: 3px;
+}
+
+.StatsContainer {
+  background-color: rgb(35, 31, 32, .5);
+  padding: 5px;
+  border: 2px solid white;
+  margin: 0 auto 5px auto;
+}
+
 .DashContainer h1 {
   margin-top: 0px;
   text-shadow: rgb(192, 143, 24) 1px 1px 0px, rgb(192, 143, 24) 2px 2px 0px, rgb(68, 68, 68) 3px 3px 0px, rgb(68, 68, 68) 4px 4px 0px, rgb(68, 68, 68) 5px 5px 0px, rgb(68, 68, 68) 6px 6px 0px, rgb(153, 153, 153) 5px 5px 15px;
@@ -46,7 +62,17 @@
 
 .CountContainer p {
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
+  margin: 5px auto;
+}
+
+.IncorrectCount {
+  color: red;
+  margin-left: 5px;
+}
+.CorrectCount {
+  color: Green;
+  margin-right: 5px;
 }
 
 .LearnButton {
