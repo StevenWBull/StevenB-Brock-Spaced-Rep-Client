@@ -27,9 +27,9 @@ class LearningRoute extends Component {
   handleCorrectAnswer = (word) => {
     return (
       <>
-        <p>Awesome job! You got it right!</p>
+        <p className='correctFeedback'>Awesome job! You got it right!</p>
         <p>current word score:</p>
-        <p>Correct: {word.correct_count + 1} Incorrect: {word.incorrect_count}</p>
+        <p className='CorrectAndIncorrectCount'>Correct: {word.correct_count + 1} Incorrect: {word.incorrect_count}</p>
       </>
     )
   }
@@ -37,7 +37,7 @@ class LearningRoute extends Component {
   handleIncorrectAnswer = (word) => {
     return (
       <>
-        <p>Oooh sorry! Please flip the card to see the translation.</p>
+        <p className='incorrectFeedback'>Oooh sorry! Please flip the card to see the translation.</p>
         <p>current word score:</p>
         <p>Correct: {word.correct_count} Incorrect: {word.incorrect_count + 1}</p>        
       </>
@@ -57,7 +57,7 @@ class LearningRoute extends Component {
     const language = this.context.words.language
     const nextWord = this.context.words.language;
     const isCorrect = this.state.isCorrect;
-    const currWord = word.find( word => word.id === nextWord.head) || [];
+    const currWord = ( word ? word.find( word => word.id === nextWord.head) : {});
     return (
       <section className="LearnContainer">
         <h1 className="TranslateTitle">
@@ -73,7 +73,7 @@ class LearningRoute extends Component {
           flipSpeedFrontToBack="1"
         >
           <div className="flip-card">
-            <p>Minionese Word to Translate</p>
+            <p className='MinionTranslateTitle'>Minionese Word to Translate</p>
             {word ? <p>{currWord.original}</p> : null}
             {isCorrect && (isCorrect.isCorrect === true ? this.handleCorrectAnswer(currWord) : this.handleIncorrectAnswer(currWord))}
           </div>
@@ -94,7 +94,7 @@ class LearningRoute extends Component {
               title="AnswerCheck"
               placeholder="Your Answer"
             required/>
-            <button type="submit" className="CheckAnswer"> Was I Right?!</button>
+            <button type="submit" className="CheckAnswer">Was I Right?!</button>
           </form>
         </div>
         <button className="NextButton" onClick={this.handleNextWord} disabled={!isCorrect ? true : false}>-> Next Word -></button>

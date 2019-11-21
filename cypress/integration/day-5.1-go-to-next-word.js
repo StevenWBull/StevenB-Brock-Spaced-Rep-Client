@@ -32,20 +32,18 @@ describe(`User story: Go to next word`, function() {
   })
 
   it(`displays another word after clicking the 'next' button`, () => {
-    cy.get('main button').click()
+    cy.get('.NextButton').click()
 
     cy.fixture('language-guess-generic.json')
       .then(languageHeadFixture => {
-        cy.get('main').within($main => {
-          cy.get('p').eq(0)
+        cy.get('section').within($section => {
+          cy.get('h3').eq(0)
             .should(
               'have.text',
-              `Your total score is: ${languageHeadFixture.totalScore}`,
+              `Total Score: `,
             )
-          cy.get('h2')
-            .should('have.text', 'Translate the word:')
-            .siblings('span')
-            .should('have.text', languageHeadFixture.nextWord)
+          cy.get('.MinionTranslateTitle')
+            .should('have.text', 'Minionese Word to Translate')
         })
       })
 
