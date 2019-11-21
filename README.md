@@ -39,7 +39,7 @@ As a first time user:
 - If all of my information is correct, upon clicking the submit button, I'm taken to the login page.
 - If any of my information is incorrect, I'm given an appropriate error message and the option to correct my information.
 
-![Minionese Register Page](/images/screenshot1.png "Minionese")
+![Minionese Register Page](/src/images/screenshot1.png "Minionese")
 
 # Login page
 ## User story:
