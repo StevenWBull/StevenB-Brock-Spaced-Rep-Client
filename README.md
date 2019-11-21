@@ -64,7 +64,7 @@ As a logged in user:
 As a logged in user who is starting a new session:
 - The application remembers that I'm logged in and doesn't redirect me to the registration page.
 
-![Minionese Login Page](/images/screenshot2.png "Minionese")
+![Minionese Login Page](/src/images/screenshot2.png "Minionese")
 
 # Dashboard page
 ## User story:
@@ -82,7 +82,7 @@ When viewing the dashboard as a logged in user:
 - I'm given a button/link to start learning
 - I'm shown the total score for guessing words correctly
 
-![Minionese Dashboard Page](/images/screenshot3.png "Minionese")
+![Minionese Dashboard Page](/src/images/screenshot3.png "Minionese")
 
 # Learning page - 1
 ## User story:
@@ -128,7 +128,7 @@ When viewing feedback for an answer on the learning page as a logged in user:
 - I'm presented with a button that I can click to learn another word
 - When clicking on the button I see the next word to learn
 
-![Minionese Learning Page](/images/screenshot4.png "Minionese")
+![Minionese Learning Page](/src/images/screenshot4.png "Minionese")
 
 # Not Found Page 
 ## User story:
@@ -141,5 +141,5 @@ When on a page that does not exit
 
 - I'm presented with info as to navigate back correctly.
 
-![Minionese Not Found Page](/images/screenshot5.png "Minionese")
+![Minionese Not Found Page](/src/images/screenshot5.png "Minionese")
 
