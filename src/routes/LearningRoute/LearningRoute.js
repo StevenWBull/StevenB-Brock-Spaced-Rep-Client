@@ -29,7 +29,7 @@ class LearningRoute extends Component {
       <>
         <p className='correctFeedback'>Awesome job! You got it right!</p>
         <p>current word score:</p>
-        <p className='CorrectAndIncorrectCount'>Correct: {word.correct_count + 1} Incorrect: {word.incorrect_count}</p>
+        <p>Correct: {word.correct_count + 1} Incorrect: {word.incorrect_count}</p>
       </>
     )
   }
@@ -75,7 +75,7 @@ class LearningRoute extends Component {
           <div className="flip-card">
             <p className='MinionTranslateTitle'>Minionese Word to Translate</p>
             {word ? <p>{currWord.original}</p> : null}
-            {isCorrect && (isCorrect.isCorrect === true ? this.handleCorrectAnswer(currWord) : this.handleIncorrectAnswer(currWord))}
+            {isCorrect && (isCorrect.isCorrect === true ? this.handleCorrectAnswer(currWord) : <p className="IncorrectAnswer">{this.handleIncorrectAnswer(currWord)}</p>)}
           </div>
           <div className="flip-card">
             <p>English Translation</p>

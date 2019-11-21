@@ -58,7 +58,8 @@ describe(`User story: Presented with word`, function() {
       .wait('@languageHeadRequest')
 
     cy.fixture('language-head.json').then(languageHeadFixture => {
-     
+      cy.get('p.CheckAnswer')
+        .should('have.text', 'Was I Right?!')
     })
   })
 })
