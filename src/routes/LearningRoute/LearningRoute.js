@@ -7,7 +7,8 @@ import AuthApiService from '../../services/auth-api-service';
 class LearningRoute extends Component {
   state = {
     isFlipped: false,
-    isCorrect: null
+    isCorrect: null,
+    isError: null
   };
   static contextType = WordsContext;
 
@@ -19,8 +20,12 @@ class LearningRoute extends Component {
   handleGuess = async(ev) => {
     ev.preventDefault();
     const { guess } = ev.target;
-    const isCorrect = await AuthApiService.postGuess(guess.value);
-    this.setState({ isCorrect: isCorrect })
+    try {
+      const isCorrect = await AuthApiService.postGuess(guess.value);
+      this.setState({ isCorrect: isCorrect })
+    } catch(error) {
+      this.setState({ isError: error });
+    }
   }
 
   handleCorrectAnswer = (word) => {
@@ -91,10 +96,11 @@ class LearningRoute extends Component {
               title="AnswerCheck"
               placeholder="Your Answer"
             required/>
+            {this.state.isError && <p>Please input an answer!</p>}
             <button type="submit" className="CheckAnswer"> Was I Right?!</button>
           </form>
         </div>
-        <button className="NextButton" onClick={this.handleNextWord}>-> Next Word -></button>
+        <button className="NextButton" onClick={this.handleNextWord} disabled={!isCorrect ? true : false}>-> Next Word -></button>
         <span className="Instruct">
           Click the home button to see instructions
         </span>
