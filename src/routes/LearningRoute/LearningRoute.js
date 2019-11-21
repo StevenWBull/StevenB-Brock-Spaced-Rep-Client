@@ -57,6 +57,7 @@ class LearningRoute extends Component {
     const language = this.context.words.language
     const nextWord = this.context.words.language;
     const isCorrect = this.state.isCorrect;
+    const currWord = word.find( word => word.id === nextWord.head) || [];
     return (
       <section className="LearnContainer">
         <h1 className="TranslateTitle">
@@ -73,12 +74,12 @@ class LearningRoute extends Component {
         >
           <div className="flip-card">
             <p>Minionese Word to Translate</p>
-            {word ? <p>{word.find( word => word.id === nextWord.head ).original}</p> : null}
-            {isCorrect && (isCorrect.isCorrect === true ? this.handleCorrectAnswer(word.find( word => word.id === nextWord.head)) : this.handleIncorrectAnswer(word.find( word => word.id === nextWord.head)))}
+            {word ? <p>{currWord.original}</p> : null}
+            {isCorrect && (isCorrect.isCorrect === true ? this.handleCorrectAnswer(currWord) : this.handleIncorrectAnswer(currWord))}
           </div>
           <div className="flip-card">
             <p>English Translation</p>
-            {word ? <p>{word.find( word => word.id === nextWord.head ).translation}</p> : null}
+            {word ? <p>{currWord.translation}</p> : null}
           </div>
         </ReactCardFlip>
         <div className="buttonContainer">
