@@ -2,34 +2,67 @@ import React, { Component } from "react";
 import "./LearningRoute.css";
 import ReactCardFlip from "react-card-flip";
 import WordsContext from '../../contexts/WordsContext';
+import AuthApiService from '../../services/auth-api-service';
 
 class LearningRoute extends Component {
   state = {
-    isFlipped: false
+    isFlipped: false,
+    isCorrect: null
   };
-
   static contextType = WordsContext;
-
-  handleClick = async e => {
-    e.preventDefault();
-    this.setState({index: this.state.index + 1})
-  };
 
   handleFlip(e){
     e.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
   }
 
-  nextWord() {}
+  handleGuess = async(ev) => {
+    ev.preventDefault();
+    const { guess } = ev.target;
+    const isCorrect = await AuthApiService.postGuess(guess.value);
+    this.setState({ isCorrect: isCorrect })
+  }
+
+  handleCorrectAnswer = (word) => {
+    return (
+      <>
+        <p>Awesome job! You got it right!</p>
+        <p>Your current score for this word is:</p>
+        <p>Correct: {word.correct_count + 1} Incorrect: {word.incorrect_count}</p>
+      </>
+    )
+  }
+
+  handleIncorrectAnswer = (word) => {
+    return (
+      <>
+        <p>Oooh sorry! Please flip the card to see the translation.</p>
+        <p>Your current score for this word is:</p>
+        <p>Correct: {word.correct_count} Incorrect: {word.incorrect_count + 1}</p>        
+      </>
+    )
+  }
+
+  handleNextWord = () => {
+    this.setState({
+      isCorrect: null
+    })
+    this.context.setUpdate();
+  }
 
   render() {
-    const word = this.context.words.words
-    const nextWord = this.context.words.language
+    const word = this.context.words.words;
+    const language = this.context.words.language
+    const nextWord = this.context.words.language;
+    const isCorrect = this.state.isCorrect;
     return (
       <section className="LearnContainer">
         <h1 className="TranslateTitle">
           Translate This Word!
         </h1>
+        <h3>
+          Total Score: { language ? language.total_score : null}
+        </h3>
         <ReactCardFlip
           isFlipped={this.state.isFlipped}
           flipDirection="horizontal"
@@ -37,29 +70,30 @@ class LearningRoute extends Component {
           flipSpeedFrontToBack="1"
         >
           <div className="flip-card">
-            <p>English Word To Translate</p>
-            {word ? <p>{word.find( word => word.id === nextWord.head ).translation}</p> : null}
-          </div>
-
-          <div className="flip-card">
             <p>Minionese Translation</p>
             {word ? <p>{word.find( word => word.id === nextWord.head ).original}</p> : null}
+            {isCorrect && (isCorrect.isCorrect === true ? this.handleCorrectAnswer(word.find( word => word.id === nextWord.head)) : this.handleIncorrectAnswer(word.find( word => word.id === nextWord.head)))}
+          </div>
+          <div className="flip-card">
+            <p>English Word To Translate</p>
+            {word ? <p>{word.find( word => word.id === nextWord.head ).translation}</p> : null}
           </div>
         </ReactCardFlip>
         <div className="buttonContainer">
           <button className="FlipButton" onClick={this.handleFlip.bind(this)}>Click to flip</button>
-          <div className="InputContainer">
+          <form className="InputContainer" onSubmit={this.handleGuess}>
             <input
               className="LearnInput"
+              name='guess'
               type="text"
               id="CheckAnswer"
               title="AnswerCheck"
               placeholder="Your Answer"
             />
             <button type="submit" className="CheckAnswer"> Was I Right?!</button>
-          </div>
+          </form>
         </div>
-        <button className="NextButton" onClick={this.handleClick.bind(this)}>-> Next Word -></button>
+        <button className="NextButton" onClick={this.handleNextWord}>-> Next Word -></button>
         <span className="Instruct">
           Click the home button to see instructions
         </span>

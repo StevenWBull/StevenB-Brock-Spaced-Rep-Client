@@ -80,7 +80,7 @@ const AuthApiService = {
         'content-type': 'application/json',
         'authorization': `Bearer ${TokenService.getAuthToken()}`
       },
-      body: { 'guess': `${userGuess}`}
+      body: JSON.stringify({ 'guess': `${userGuess}`})
     })
     .then(res => {
       return (!res.ok)

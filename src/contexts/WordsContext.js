@@ -4,7 +4,9 @@ import AuthApiService from '../services/auth-api-service'
 const WordsContext = React.createContext({
   nextWord: [],
   words: [],
+  update: false,
   setError: () => {},
+  setUpdate: () => {}
 })
 
 export default WordsContext;
@@ -12,7 +14,8 @@ export default WordsContext;
 export class WordsProvider extends Component {
   state = {
     nextWord: [],
-    words: []
+    words: [],
+    update: false
   }
 
   componentDidMount() {
@@ -34,11 +37,21 @@ export class WordsProvider extends Component {
     this.setState({ error })
   }
 
+  setUpdate = () => {
+    let newUpdate = !this.state.update;
+    console.log(newUpdate)
+    console.log('I ran!')
+    this.setState({ 
+      update: newUpdate
+    }, this.componentDidMount)
+  }
+
   render() {
     const value = {
       nextWord: this.state.nextWord,
       words: this.state.words,
-      setError: this.setError
+      setError: this.setError,
+      setUpdate: this.setUpdate
     }
     return (
       <WordsContext.Provider value={value}>
