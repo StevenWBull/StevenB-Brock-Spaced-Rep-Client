@@ -1,48 +1,22 @@
-# Spaced Repetition Capstone
+# Brockb-StevenB-Minionese 
 
-## Setup
+Minionese app project completed as a pair by Brock Boutwell and Steven Bull [EI34]
 
-To setup the application
+## Technologies
 
-1. Fork and clone the project to your machine
-2. `npm install`. This will also install the application *Cypress.io* for running browser integration tests
+Html, CSS, Javascript, Express, React, Node, Postgresql
 
-The project expects you have the Spaced repetition API project setup and running on http://localhost:8000.
+## link to Live Client App 
+* https://packrat-app.brockboutwell.now.sh
 
-Find instructions to setup the API here https://github.com/Thinkful-Ed/spaced-repetition-api.
+## link to Client Github Repo 
+* https://github.com/Bomaani/StevenB-Brock-Spaced-Rep-Client
 
-## Running project
 
-This is a `create-react-app` project so `npm start` will start the project in development mode with hot reloading by default.
+### Example User with populated account data
 
-## Running the tests
-
-This project uses [Cypress IO](https://docs.cypress.io) for integration testing using the Chrome browser.
-
-Cypress has the following expectations:
-
-- You have cypress installed (this is a devDependency of the project)
-- You have your application running at http://localhost:3000.
-  - You can change the address of this expectation in the `./cypress.json` file.
-- Your `./src/config.js` is using http://localhost:8000/api as the `API_ENDPOINT`
-
-To start the tests run the command:
-
-```bash
-npm run cypress:open
-```
-
-On the first run of this command, the cypress application will verify its install. Any other runs after this, the verification will be skipped.
-
-The command will open up the Cypress application which reads tests from the `./cypress/integration/` directory. You can then run individual tests by clicking on the file names or run all tests by clicking the "run all tests" button in the cypress GUI.
-
-Tests will assert against your running localhost client application.
-
-You can also start all of the tests in the command line only (not using the GUI) by running the command:
-
-```bash
-npm run cypress:run
-```
+* Username: admin
+* Password: pass
 
 This will save video recordings of the test runs in the directory `./cypress/videos/`.
 
@@ -64,6 +38,8 @@ As a first time user:
 - On that page, I can enter my name, username, and password.
 - If all of my information is correct, upon clicking the submit button, I'm taken to the login page.
 - If any of my information is incorrect, I'm given an appropriate error message and the option to correct my information.
+
+![Minionese Register Page](/images/screenshot1.png "Minionese")
 
 # Login page
 ## User story:
@@ -88,6 +64,8 @@ As a logged in user:
 As a logged in user who is starting a new session:
 - The application remembers that I'm logged in and doesn't redirect me to the registration page.
 
+![Minionese Login Page](/images/screenshot2.png "Minionese")
+
 # Dashboard page
 ## User story:
 
@@ -103,6 +81,8 @@ When viewing the dashboard as a logged in user:
 - I'm shown my count for correct and incorrect responses for each word
 - I'm given a button/link to start learning
 - I'm shown the total score for guessing words correctly
+
+![Minionese Dashboard Page](/images/screenshot3.png "Minionese")
 
 # Learning page - 1
 ## User story:
@@ -147,3 +127,19 @@ When viewing feedback for an answer on the learning page as a logged in user:
 
 - I'm presented with a button that I can click to learn another word
 - When clicking on the button I see the next word to learn
+
+![Minionese Learning Page](/images/screenshot4.png "Minionese")
+
+# Not Found Page 
+## User story:
+
+As a user, I can access the not found page and use it to navigate back to where i need to be.
+
+## Acceptance criteria:
+
+When on a page that does not exit
+
+- I'm presented with info as to navigate back correctly.
+
+![Minionese Not Found Page](/images/screenshot5.png "Minionese")
+
