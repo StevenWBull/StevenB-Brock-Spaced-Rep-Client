@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "Minionese-App",
-  "alias": "StevenB-Brock-Minionese-App",
+  "alias": "Minionese-App",
   "routes": [
       {
         "src": "^/static/(.*)",
