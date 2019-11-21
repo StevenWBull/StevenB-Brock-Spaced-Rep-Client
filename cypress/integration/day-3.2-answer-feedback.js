@@ -43,7 +43,7 @@ describe(`User story: Answer feedback`, function() {
       cy.wait('@languageHeadRequest')
 
       cy.get('main form').within($form => {
-        cy.get('input#learn-guess-input')
+        cy.get('input#CheckAnswer')
           .type(guess)
 
         cy.get('button').click()

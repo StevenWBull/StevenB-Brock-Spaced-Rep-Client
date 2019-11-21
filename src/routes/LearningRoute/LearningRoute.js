@@ -48,16 +48,16 @@ class LearningRoute extends Component {
         </ReactCardFlip>
         <div className="buttonContainer">
           <button className="FlipButton" onClick={this.handleFlip.bind(this)}>Click to flip</button>
-          <div className="InputContainer">
+          <form className="InputContainer">
             <input
               className="LearnInput"
               type="text"
               id="CheckAnswer"
               title="AnswerCheck"
               placeholder="Your Answer"
-            />
+            required/>
             <button type="submit" className="CheckAnswer"> Was I Right?!</button>
-          </div>
+          </form>
         </div>
         <button className="NextButton" onClick={this.handleClick.bind(this)}>-> Next Word -></button>
         <span className="Instruct">
