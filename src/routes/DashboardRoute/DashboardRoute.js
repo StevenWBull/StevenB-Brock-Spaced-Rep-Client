@@ -16,9 +16,8 @@ class DashboardRoute extends Component {
   static contextType = WordsContext;
 
   render() {
-    console.log(this.context)
     const { words } = this.context.words;
-    console.log(words)
+    const language = this.context.words.language
     return (
       <section className="DashContainer">
         <h1>Welcome!</h1>
@@ -31,16 +30,15 @@ class DashboardRoute extends Component {
             </AccordionItemHeading>
             <AccordionItemPanel>
               <br />
-              - First youll see a notecard that has an english word on it.
+              - First you will see a notecard that has an Minionese word on it.
               <br />
               <br />
               - Notice the 'Flip Card' button? <br />
               <br />
-              - That will allow you to see the translation. But dont cheat until
-              you have given it a guess!
+              - That will allow you to see the translation, But will be disabled until after you guess!
               <br />
               <br />
-              - Now that you have seen the English word give it a guess as to
+              - Now that you have seen the Minionese word give it a guess as to
               what its translation may be! <br />
               <br />
               - Type your guess into the Box and click the 'Am I Right?!'
@@ -58,12 +56,16 @@ class DashboardRoute extends Component {
             </AccordionItemPanel>
           </AccordionItem>
           <div className="UserStats">
-            <h3>Times Correct Stats</h3>
+            <h3>Stats</h3>
+            <span className="CorrectCount">Correct</span> | <span className="IncorrectCount">Incorrect</span>
             <div className="CountContainer">
               {words 
-                ? words.sort((a, b) => a.id - b.id).map( word => <p key={word.id}>{word.original} | {word.correct_count} | {word.incorrect_count}</p>) 
+                ? words.sort((a, b) => a.id - b.id).map( word => <div className="StatsContainer"><p key={word.id}>{word.original}</p><span className="CorrectCount">{word.correct_count}</span>|<span className="IncorrectCount">{word.incorrect_count}</span></div>) 
                 : null
               }
+            </div>
+            <div className="TotalScoreDash">
+              Total Score: { language ? language.total_score : null}
             </div>
           </div>
         </Accordion>

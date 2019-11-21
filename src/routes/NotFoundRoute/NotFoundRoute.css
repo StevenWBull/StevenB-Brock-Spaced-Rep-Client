@@ -1,0 +1,47 @@
+.NotFoundPage p {
+  text-align: center;
+  color: white;
+}
+
+.NotFoundMinion {
+  width: 150px;
+  height: auto;
+}
+.NotFoundMinion2 {
+  width: 75px;
+  height: auto;
+}
+
+.ImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.NotFoundPage h2 {
+  color: white;
+  font-size: 2em;
+}
+
+.NotFoundPage {
+  background-color: #0a75bc;
+  width: 90%;
+  border: 2px solid #231F20;
+  padding: 15px;
+  margin: 25px auto 85px auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+}
+
+@media screen and (min-width: 765px) {
+  .NotFoundPage {
+    background-color: #0a75bc;
+    width: 60%;
+    border: 2px solid #231F20;
+    padding: 15px;
+    margin: 25px auto 85px auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+  }
+}
