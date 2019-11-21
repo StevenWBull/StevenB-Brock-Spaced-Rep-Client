@@ -45,7 +45,8 @@ class LearningRoute extends Component {
 
   handleNextWord = () => {
     this.setState({
-      isCorrect: null
+      isCorrect: null,
+      isFlipped: false
     })
     this.context.setUpdate();
   }
@@ -80,7 +81,7 @@ class LearningRoute extends Component {
           </div>
         </ReactCardFlip>
         <div className="buttonContainer">
-          <button className="FlipButton" onClick={this.handleFlip.bind(this)}>Click to flip</button>
+          <button className="FlipButton" onClick={this.handleFlip.bind(this)} disabled={!isCorrect ? true : false}>Click to flip</button>
           <form className="InputContainer" onSubmit={this.handleGuess}>
             <input
               className="LearnInput"
