@@ -57,7 +57,7 @@ class LearningRoute extends Component {
     const language = this.context.words.language
     const nextWord = this.context.words.language;
     const isCorrect = this.state.isCorrect;
-    const currWord = word.find( word => word.id === nextWord.head) || [];
+    const currWord = ( word ? word.find( word => word.id === nextWord.head) : {});
     return (
       <section className="LearnContainer">
         <h1 className="TranslateTitle">
