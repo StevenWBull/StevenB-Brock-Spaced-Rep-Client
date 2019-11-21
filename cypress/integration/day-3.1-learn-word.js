@@ -31,7 +31,7 @@ describe(`User story: Presented with word`, function() {
     cy.fixture('language-head.json')
       .then(languageHeadFixture => {
         cy.get('main').within($main => {
-          cy.get('button[className="NextButton"]')
+          cy.get('button.NextButton')
             .should('have.text', '-> Next Word ->')
         })
       })
@@ -42,13 +42,13 @@ describe(`User story: Presented with word`, function() {
       .visit(`/learn`)
       .wait('@languageHeadRequest')
 
-    cy.get('main form').within($form => {
+    cy.get('form').within($form => {
       cy.get('input#CheckAnswer')
         .should('have.attr', 'type', 'text')
         .and('have.attr', 'required', 'required')
 
-      cy.get('button[type=submit]')
-        .should('have.text', 'Was I Right?')
+      cy.get('button.CheckAnswer')
+        .should('have.text', ' Was I Right?!')
     })
   })
 

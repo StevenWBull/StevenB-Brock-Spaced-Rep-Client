@@ -36,7 +36,6 @@ describe(`User story: User's dashboard`, function() {
 
         cy.get('a')
           .should('have.attr', 'href', '/learn')
-          .and('have.text', 'Learn')
 
         cy.get('h3')
           .should('have.text', 'Times Correct Stats')
