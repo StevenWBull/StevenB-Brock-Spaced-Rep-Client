@@ -29,7 +29,7 @@ class LearningRoute extends Component {
       <>
         <p className='correctFeedback'>Awesome job! You got it right!</p>
         <p>current word score:</p>
-        <p>Correct: {word.correct_count + 1} Incorrect: {word.incorrect_count}</p>
+        <p className='userWordCounts'>Correct: {word.correct_count + 1} Incorrect: {word.incorrect_count}</p>
       </>
     )
   }

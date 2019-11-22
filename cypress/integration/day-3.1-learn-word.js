@@ -23,6 +23,16 @@ describe(`User story: Presented with word`, function() {
       .as('languageHeadRequest')
   })
 
+  beforeEach(() => {
+    cy.route({
+      method: 'POST',
+      url: `/api/language/guess`,
+      status: 200,
+      response: 'fixture:language-guess-generic.json',
+    })
+      .as('postListGuessIncorrect')
+  })
+
   it('displays the current score and h2 with next word', () => {
     cy.login()
       .visit(`/learn`)
@@ -53,13 +63,15 @@ describe(`User story: Presented with word`, function() {
   })
 
   it(`displays the correct and incorrect count for this word`, () => {
-    cy.login()
-      .visit(`/learn`)
-      .wait('@languageHeadRequest')
+    const guess = 'my-test-guess';
+    cy.login().visit(`/learn`).wait('@languageHeadRequest')
+    cy.get('input#CheckAnswer').type(guess)
+    cy.get('form').submit().wait('@postListGuessIncorrect')
+    
 
     cy.fixture('language-head.json').then(languageHeadFixture => {
-      cy.get('p.CheckAnswer')
-        .should('have.text', 'Was I Right?!')
+      cy.get('.userWordCounts')
+        .should('have.text', 'Correct: NaN Incorrect: ')
     })
   })
 })
