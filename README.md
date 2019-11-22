@@ -1,4 +1,4 @@
-# Brockb-StevenB-Minionese 
+# Minionese-Learning-App 
 
 Minionese app project completed as a pair by Brock Boutwell and Steven Bull [EI34]
 
