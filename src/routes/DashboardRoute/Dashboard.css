@@ -67,11 +67,11 @@
 }
 
 .IncorrectCount {
-  color: red;
+  color: rgb(239, 241, 71);
   margin-left: 5px;
 }
 .CorrectCount {
-  color: Green;
+  color: rgb(58, 226, 226);
   margin-right: 5px;
 }
 
