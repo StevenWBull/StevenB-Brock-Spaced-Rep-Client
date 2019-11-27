@@ -6,11 +6,11 @@ Minionese app project completed as a pair by Brock Boutwell and Steven Bull [EI3
 
 Html, CSS, Javascript, Express, React, Node, Postgresql
 
-## link to Live Client App 
+## Link to Live Client App 
 * https://minionese-app.now.sh
 
-## link to Client Github Repo 
-* https://github.com/Bomaani/StevenB-Brock-Spaced-Rep-Client
+## Link to Server Github Repo 
+* https://github.com/StevenWBull/minionese-learning-server
 
 
 ### Example User with populated account data
