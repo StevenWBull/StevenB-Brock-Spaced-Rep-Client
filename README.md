@@ -7,7 +7,7 @@ Minionese app project completed as a pair by Brock Boutwell and Steven Bull [EI3
 Html, CSS, Javascript, Express, React, Node, Postgresql
 
 ## link to Live Client App 
-* https://packrat-app.brockboutwell.now.sh
+* https://minionese-app.now.sh
 
 ## link to Client Github Repo 
 * https://github.com/Bomaani/StevenB-Brock-Spaced-Rep-Client
